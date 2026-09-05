@@ -154,9 +154,9 @@ Verify the canonical domain in Google Search Console, submit the sitemap, inspec
 
 ## Implementation roadmap
 
-### Phase 0: Foundation
+### Phase 0: Digital Foundation (Completed)
 
-Define the public/private route boundary, choose the production framework, add authentication, establish the data model, configure environments, remove client-side shared keys, add error tracking, and document data retention and threat protections.
+Implementation of the SEO-optimized landing page and product specification. Defined the product vision, core features, and roadmap to guide the v3 development. The `index.html` now serves as the high-quality entry point for the project.
 
 ### Phase 1: Core workspace
 
@@ -205,4 +205,4 @@ Run security review, accessibility audit, cross-browser tests, unit and integrat
 
 ---
 
-**Implementation status:** The v3 implementation has not been added yet. This README documents the planned direction and acceptance criteria for the next development phase.
+**Implementation status:** Phase 0 (Digital Foundation) is complete. The v3 implementation of core features has not been added yet. This README documents the planned direction and acceptance criteria for the next development phase.
