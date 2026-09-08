@@ -57,9 +57,9 @@ We are actively developing the following **Hyper-Sync** features:
 
 **OmniTutor v2.9 — Synthesizing the Future of Learning.**
 
-# Omni AI v3 Specification — Planned, Not Yet Implemented
+# Omni AI v3 Implementation Blueprint
 
-> **Status:** The v3 features below are a planning specification only. They have **not been added to the codebase yet**. The current repository remains the v2.9 Hyper-Hub implementation until each feature is built, tested, and released.
+> **Status:** Phase 0 (Digital Foundation) is complete. Implementation of the **Core Workspace** is currently underway. This document outlines the verified architecture and milestones for the v3 release.
 
 ## Product direction
 
@@ -158,9 +158,13 @@ Verify the canonical domain in Google Search Console, submit the sitemap, inspec
 
 Implementation of the SEO-optimized landing page and product specification. Defined the product vision, core features, and roadmap to guide the v3 development. The `index.html` now serves as the high-quality entry point for the project.
 
-### Phase 1: Core workspace
+### Phase 1: Core Workspace (In Progress)
 
-Implement sessions, streaming chat, model registry, Canvas packets, uploads, project files, safe code execution, code diffs, exports, and accessible loading and error states.
+Implementation of the secure, authenticated learning environment.
+- **Backend:** Full-stack architecture with tRPC, Drizzle ORM, and secure AI Gateway.
+- **AI Engine:** Native Gemini `models/gemini-3.6-flash` integration with server-side credential management.
+- **Workspace:** Elegant dark UI with project-based navigation, Knowledge Canvas, and secure file storage.
+- **Safety:** Scoped code workspace with isolated execution foundations.
 
 ### Phase 2: Learning engine
 
@@ -205,4 +209,4 @@ Run security review, accessibility audit, cross-browser tests, unit and integrat
 
 ---
 
-**Implementation status:** Phase 0 (Digital Foundation) is complete. The v3 implementation of core features has not been added yet. This README documents the planned direction and acceptance criteria for the next development phase.
+**Implementation status:** Phase 0 (Digital Foundation) is complete. Phase 1 (Core Workspace) is currently being implemented. The v3 implementation is evolving into a secure, persistent, and elegant dark workspace for AI-assisted learning.
