@@ -210,3 +210,50 @@ Run security review, accessibility audit, cross-browser tests, unit and integrat
 ---
 
 **Implementation status:** Phase 0 (Digital Foundation) is complete. Phase 1 (Core Workspace) is currently being implemented. The v3 implementation is evolving into a secure, persistent, and elegant dark workspace for AI-assisted learning.
+
+
+## Public learning SEO surface
+
+The repository now includes a crawlable public route structure using **Learning** rather than Subjects. Each generated public page has a unique title, meta description, canonical URL, robots directive, Open Graph fields, Twitter fields, JSON-LD, a primary heading, useful visible copy, and internal links to related learning routes.
+
+### Public URLs
+
+- `/` — Omni AI Tutor workspace and product entry point
+- `/features/ai-tutor/`
+- `/features/ai-quizzes/`
+- `/features/coding-tutor/`
+- `/features/language-learning/`
+- `/features/personalized-learning/`
+- `/learning/`
+- `/learning/mathematics/`
+- `/learning/programming/`
+- `/learning/science/`
+- `/learning/languages/`
+- `/resources/`
+- `/resources/articles/`
+- `/resources/tutorials/`
+- `/resources/study-guides/`
+- `/about/`
+- `/pricing/`
+- `/contact/`
+- `/privacy/`
+- `/terms/`
+- `/security/`
+- `/changelog/`
+
+The generated discovery files are available at `/sitemap.xml` and `/robots.txt`. The canonical production domain is currently `https://omni-ai-tutor-v3.netlify.app`. If the deployment domain changes, update `BASE` in `build_seo_pages.py`, regenerate the pages, and commit the result.
+
+To regenerate the public pages after editing route copy:
+
+```bash
+python3 build_seo_pages.py
+```
+
+### Search Console launch checklist
+
+1. Deploy the repository to the canonical Netlify domain.
+2. Confirm `/sitemap.xml` returns `200` and contains only public URLs.
+3. Confirm `/robots.txt` returns `200` and references the sitemap.
+4. Verify the domain in Google Search Console and submit `sitemap.xml`.
+5. Use URL Inspection on the homepage and the principal Learning and Features pages.
+6. Validate structured data, canonical tags, internal links, mobile rendering, and real `404` responses after deployment.

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /search?
+Sitemap: https://omni-ai-tutor-v3.netlify.app/sitemap.xml

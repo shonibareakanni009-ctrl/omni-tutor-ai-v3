@@ -7,11 +7,11 @@
   <meta name="description" content="Omni AI Tutor v3 is a local-first learning workspace for asking, capturing, practicing, and reflecting with an AI tutor.">
   <meta name="author" content="Akanni Shonibare">
   <meta name="theme-color" content="#07111f">
-  <link rel="canonical" href="https://omni-ai-tutor-v3.vercel.app">
+  <link rel="canonical" href="https://omni-ai-tutor-v3.netlify.app">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Omni AI Tutor v3 — Learn with momentum">
   <meta property="og:description" content="An AI tutor, Knowledge Canvas, quiz engine, and progress workspace in one focused learning loop.">
-  <meta property="og:url" content="https://omni-ai-tutor-v3.vercel.app/">
+  <meta property="og:url" content="https://omni-ai-tutor-v3.netlify.app/">
   <meta name="google-site-verification" content="cPEpEG_wT8xGk5-7-Cy-Di-PWat6QXKiIWnYPntOIvM">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{ink:'#07111f',cyanx:'#35d3c4',violetx:'#9b8cff'}}}}</script>
@@ -22,7 +22,7 @@
   <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
   <nav class="topbar">
     <a href="#top" class="brand"><span class="brand-mark">O</span><span>OMNI <small>v3</small></span></a>
-    <div class="topbar-actions"><span class="status-dot"></span><span class="text-xs text-slate-400">Local-first workspace</span><a href="OMNI_AI_TUTOR_V3_BLUEPRINT.md" class="btn btn-ghost hidden sm:inline-flex">Blueprint</a><a href="https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3" class="btn btn-ghost">GitHub</a></div>
+    <div class="topbar-actions"><span class="status-dot"></span><span class="text-xs text-slate-400">Local-first workspace</span><a href="/features/ai-tutor/" class="btn btn-ghost hidden sm:inline-flex">Features</a><a href="/learning/" class="btn btn-ghost hidden sm:inline-flex">Learning</a><a href="/resources/" class="btn btn-ghost hidden sm:inline-flex">Resources</a><a href="OMNI_AI_TUTOR_V3_BLUEPRINT.md" class="btn btn-ghost hidden sm:inline-flex">Blueprint</a><a href="https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3" class="btn btn-ghost">GitHub</a></div>
   </nav>
   <main id="top" class="workspace">
     <aside class="sidebar">
@@ -60,7 +60,7 @@
       <section class="panel settings-panel" id="settings"><div class="panel-head"><div><span class="section-label">DEVELOPER SETTINGS</span><h3>Connect your model</h3></div><span class="text-xs text-slate-500">Prototype mode</span></div><div class="settings-grid"><label>Gemini API key<input id="apiKeyInput" class="input" type="password" placeholder="Stored only in this browser"></label><button id="saveKeyBtn" class="btn btn-outline self-end">Save locally</button><label class="procode-label">ProCode scratchpad<textarea id="procodeEditor" class="input" rows="2" placeholder="Draft code alongside your tutor…"></textarea></label><button id="saveProcodeBtn" class="btn btn-outline self-end">Save draft</button></div><p class="security-note">For production, provider credentials belong behind a server-side AI gateway. This browser key field is a temporary development fallback.</p></section>
     </section>
   </main>
-  <footer class="footer"><span>OMNI AI TUTOR <b>v3</b></span><span>Ask · Capture · Practice · Reflect</span><a href="OMNI_AI_TUTOR_V3_BLUEPRINT.md">Read the verified blueprint →</a></footer>
+  <footer class="footer"><span>OMNI AI TUTOR <b>v3</b></span><span>Ask · Capture · Practice · Reflect</span><span><a href="/privacy/">Privacy</a> · <a href="/security/">Security</a> · <a href="/contact/">Contact</a></span><a href="OMNI_AI_TUTOR_V3_BLUEPRINT.md">Read the verified blueprint →</a></footer>
   <script src="app.js"></script>
   <script>const observer=new MutationObserver(()=>{const m=document.getElementById('packetMetric');if(m)m.textContent=document.querySelectorAll('#packetList .packet-card').length});observer.observe(document.body,{subtree:true,childList:true});</script>
 </body>
