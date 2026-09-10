@@ -6,7 +6,8 @@ const state = {
   chat: [],
   packets: [],
   focusPacketId: 'all',
-  quiz: []
+  quiz: [],
+  attempts: []
 };
 
 const el = {};
@@ -184,6 +185,7 @@ function renderAll() {
   renderPackets();
   renderQuiz();
   renderMindMap();
+  renderProgress();
 }
 
 function renderChat() {
@@ -249,6 +251,7 @@ function renderPackets() {
     });
     el.packetList.appendChild(card);
   });
+  renderProgress();
 }
 
 function renderQuiz() {
@@ -262,10 +265,21 @@ function renderQuiz() {
     wrap.innerHTML = `<p class="font-medium">Q${i + 1}. ${escapeHtml(item.q)}</p>${options}<p class="text-xs mt-2 text-cyan-300 hidden" data-feedback></p>`;
     wrap.querySelectorAll('[data-choice]').forEach(btn => {
       btn.addEventListener('click', () => {
+        if (wrap.dataset.answered) return;
+        wrap.dataset.answered = 'true';
         const chosen = Number(btn.dataset.choice);
         const fb = wrap.querySelector('[data-feedback]');
         fb.classList.remove('hidden');
         fb.textContent = chosen === item.answer ? 'Correct ✅' : `Incorrect. Correct answer: ${String.fromCharCode(65 + item.answer)}.`;
+        if ([...el.quizContainer.querySelectorAll('.packet-card[data-answered="true"]')].length === state.quiz.length) {
+          const correct = [...el.quizContainer.querySelectorAll('.packet-card')].filter(card => card.querySelector('[data-feedback]')?.textContent.startsWith('Correct')).length;
+          state.attempts.unshift({ score: correct, total: state.quiz.length, ts: Date.now() });
+          state.attempts = state.attempts.slice(0, 20);
+          persist();
+          renderProgress();
+          const status = document.getElementById('practiceState');
+          if (status) status.textContent = `Complete · ${correct}/${state.quiz.length}`;
+        }
       });
     });
     el.quizContainer.appendChild(wrap);
@@ -314,6 +328,22 @@ function renderMindMap() {
     label.textContent = node.title.slice(0, 12);
     svg.appendChild(label);
   });
+}
+
+function renderProgress() {
+  const packetCount = document.getElementById('progressPackets');
+  const attemptCount = document.getElementById('progressAttemptsCount');
+  const score = document.getElementById('progressScore');
+  const attemptsLabel = document.getElementById('progressAttempts');
+  const navCount = document.getElementById('navPacketCount');
+  if (packetCount) packetCount.textContent = state.packets.length;
+  if (navCount) navCount.textContent = state.packets.length;
+  if (attemptCount) attemptCount.textContent = state.attempts.length;
+  if (state.attempts.length && score) {
+    const average = state.attempts.reduce((sum, attempt) => sum + (attempt.score / Math.max(attempt.total, 1)) * 100, 0) / state.attempts.length;
+    score.textContent = `${Math.round(average)}%`;
+    if (attemptsLabel) attemptsLabel.textContent = `${state.attempts[0].score}/${state.attempts[0].total} on latest quiz`;
+  }
 }
 
 function loadState() {

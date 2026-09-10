@@ -18,6 +18,7 @@ PAGES = {
     '/learning/science/': ('Science Learning | Omni AI Tutor v3', 'Study science with clear explanations, connected concepts, and quizzes designed to strengthen understanding.', 'Science Learning', 'Use the tutor to connect scientific ideas, ask “why” questions, and turn complex notes into smaller, reviewable learning packets.'),
     '/learning/languages/': ('Language Learning Paths | Omni AI Tutor v3', 'Explore language learning support for vocabulary, grammar, conversation, and spaced review.', 'Languages Learning', 'Language learning improves with frequent retrieval and meaningful use. Combine conversation practice with saved examples and short review quizzes.'),
     '/resources/': ('Learning Resources | Omni AI Tutor v3', 'Guides, tutorials, and study resources for using AI to learn more effectively.', 'Resources', 'Find practical resources for building better learning habits with an AI tutor: from asking precise questions to reviewing concepts with active recall.'),
+    '/blog/': ('Omni AI Tutor Blog | Product and Learning Notes', 'Read product updates, learning notes, and practical ideas from the Omni AI Tutor project.', 'Blog', 'The Omni blog follows the ideas behind the product: better AI tutoring, clearer learning workflows, and the work of turning a prototype into a useful learning environment.'),
     '/resources/articles/': ('Learning Articles | Omni AI Tutor v3', 'Evidence-informed articles about AI tutoring, active recall, personalization, and digital learning.', 'Articles', 'Read practical articles about the habits and systems that make AI-assisted learning more useful, transparent, and measurable.'),
     '/resources/tutorials/': ('Learning Tutorials | Omni AI Tutor v3', 'Step-by-step tutorials for learning with the Omni AI Tutor workspace.', 'Tutorials', 'Follow guided tutorials for asking better questions, creating Knowledge Canvas packets, and using quizzes to reinforce understanding.'),
     '/resources/study-guides/': ('Study Guides | Omni AI Tutor v3', 'Focused study guides for turning difficult topics into clear, reviewable learning plans.', 'Study Guides', 'Use a study guide as a starting point, then personalize it with the tutor and turn the most important ideas into Canvas packets.'),
@@ -30,7 +31,7 @@ PAGES = {
     '/changelog/': ('Changelog | Omni AI Tutor v3', 'Follow the progress of Omni AI Tutor v3 as the learning workspace evolves.', 'Changelog', 'Track product improvements, documentation updates, and milestones as Omni AI Tutor moves from foundation to a complete learning environment.'),
 }
 
-NAV = [('/','Home'),('/features/ai-tutor/','Features'),('/learning/','Learning'),('/resources/','Resources'),('/about/','About'),('/contact/','Contact')]
+NAV = [('/','Home'),('/features/ai-tutor/','Features'),('/learning/','Learning'),('/resources/','Resources'),('/blog/','Blog'),('/changelog/','Changelog'),('/contact/','Contact')]
 
 def links_for(path):
     related = []
