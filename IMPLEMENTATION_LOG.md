@@ -1,43 +1,51 @@
-# Omni AI Tutor v3 — Implementation Log
+# Omni AI Tutor v3 — My Implementation Log
+
+**Author:** Akanni Shonibare
 
 ## Version context
 
-The current V3 product is a continuation of the original OmniTutor v2.9 foundation. The `v2.9` label refers to the earlier local-first workspace foundation that preceded the V3 product expansion. V3 is the product direction built on top of that foundation, not a claim that the current static prototype is already the complete production platform.
+I am treating **OmniTutor v2.9** as the original V3 foundation. V3 is my product expansion from that local-first foundation into a clearer AI learning environment. I am not presenting the current static prototype as a finished production platform.
 
-## Step-by-step work completed
+## 1. Repository and project-history review
 
-### 1. Repository and history review
+I cloned and reviewed the V3 repository before changing it. I also inspected the V2 repository and its live deployment. V2 gave me the application-shell reference: Assistant, Code Editor, File Manager, Live Preview, Dashboard, Settings, and a focused workspace layout.
 
-The V3 repository was cloned and reviewed before changes were made. The supplied project history was converted into `OMNI_AI_TUTOR_V3_BLUEPRINT.md`, separating verified product direction from unconfirmed ideas.
+I used the supplied project history to create a verified V3 blueprint. I separated confirmed direction from features that I have not yet built or verified.
 
-The V2 repository and live deployment were then inspected. V2 established the stronger application pattern: a persistent workspace shell with Assistant, Code Editor, File Manager, Live Preview, Dashboard, and Settings destinations. Its README also described the intended upgrade path around tutoring, coding, vision, quizzes, and progress.
+## 2. Client-side workspace foundation
 
-### 2. Initial V3 workspace foundation
+I replaced the original marketing-only V3 entry point with a browser-based workspace prototype. The workspace connects the existing tutor, Knowledge Canvas, packet focus, quiz, ProCode draft, MathJax, and localStorage behavior.
 
-The original V3 landing page was replaced with a local-first learning workspace. The first slice connected the existing browser logic for tutoring, Knowledge Canvas packets, packet focus, quiz generation, ProCode drafts, MathJax, and localStorage.
+I then redesigned the experience around V2’s stronger application pattern. The workspace now has persistent navigation for Assistant, Knowledge Canvas, Practice, Code Lab, Mind Map, Progress, and Settings. It also includes breadcrumbs, workspace context, model status, clearer empty states, and responsive mobile behavior.
 
-### 3. Public SEO surface
+## 3. Public landing page and private workspace
 
-A static public surface was added without requiring a server at runtime. The repository now contains separate pages for feature routes, Learning routes, Resources, Blog, Changelog, About, Pricing, Contact, Privacy, Terms, and Security. Each public page includes a unique title, description, canonical URL, robots directive, Open Graph metadata, Twitter metadata, JSON-LD, visible heading, and internal links.
+I separated the public experience from the local application. The root route `/` is now a crawlable landing page. The browser workspace is available at `/app/` and is marked `noindex,nofollow` because it is a local prototype rather than a public content page.
 
-The build script `build_seo_pages.py` generates these pages, `sitemap.xml`, and `robots.txt`. The validator `validate_seo.py` checks the sitemap and page metadata. These scripts are build and quality tools; the browser application remains HTML, CSS, and JavaScript.
+The landing page explains the learning loop, links to feature pages, connects visitors to the Learning Hub, Blog, Changelog, project history, and opens the workspace when they want to try the local experience.
 
-### 4. Project lineage
+## 4. Public SEO surface
 
-The homepage and public pages link to the earlier project deployments: Omni AI Ruby, Omni AI Tutor v1, and Omni AI Tutor v2. This gives users and crawlers a clear project history rather than presenting V3 as disconnected from the earlier work.
+I added separate public routes for features, Learning, Resources, Blog, Changelog, About, Pricing, Contact, Privacy, Terms, and Security. Each public page has a unique title, description, canonical URL, robots directive, Open Graph metadata, Twitter metadata, JSON-LD, visible page content, and internal links.
 
-### 5. V2-informed UX redesign
+I created `build_seo_pages.py` to generate the public pages, `sitemap.xml`, and `robots.txt`. I created `validate_seo.py` to check the sitemap, route count, metadata, structured data, and public-page links. These Python files are build and quality tools; the browser application itself remains HTML, CSS, and JavaScript.
 
-The V3 interface was redesigned around the V2 application shell rather than a marketing-page layout. It now has persistent navigation for Assistant, Knowledge Canvas, Practice, Code Lab, Mind Map, Progress, and Settings. The interface includes breadcrumbs, model status, workspace context, focused empty states, responsive mobile behavior, and clearer surfaces for the learner’s current task.
+## 5. Project lineage
 
-### 6. Client-side progress improvements
+I linked the earlier projects from the homepage and public pages so the project history is visible:
 
-Server-dependent work was intentionally deferred. The current client-only pass adds local quiz attempt tracking, average quiz score, packet counts, attempt counts, completion status, and progress rendering from browser state. No external database or server is required for these features.
+- [Omni AI Ruby](https://omni-ai-ruby.vercel.app/)
+- [Omni AI Tutor v1](https://omni-ai-tutor-v1.netlify.app/)
+- [Omni AI Tutor v2](https://omni-ai-tutor-v2.netlify.app/)
 
-## Deferred server-dependent work
+## 6. Client-side learning progress
 
-Authentication, a server-side AI gateway, relational persistence, private object storage, secure code execution, production uploads, collaboration, managed model credentials, and account-level analytics remain deferred until a server-backed architecture is approved.
+I intentionally deferred server-dependent features. On the client side, I added local quiz attempt tracking, average quiz score, packet counts, attempt counts, quiz completion status, and progress rendering from browser state. These features do not require a database or server.
 
-## Verification and delivery
+## 7. Validation and delivery
 
-The JavaScript syntax check, SEO validator, sitemap checks, internal-link checks, and Git diff checks have been run during implementation. Changes are committed and pushed to the selected GitHub repository after each completed slice.
+I have run JavaScript syntax checks, the SEO validator, sitemap checks, internal-link checks, route checks, and Git diff checks. I commit and push completed work to the selected GitHub repository so the project remains recoverable.
+
+## Deferred work
+
+I have not implemented authentication, a server-side AI gateway, relational persistence, private object storage, secure code execution, production uploads, collaboration, managed model credentials, or account-level analytics. I will add those only when I move the project to a server-backed architecture.

@@ -1,79 +1,76 @@
-# Omni AI Tutor v3 — Verified Product Blueprint
+# Omni AI Tutor v3 — My Product Blueprint
 
-> **Status:** Phase 0 is complete. This document separates remembered, verified direction from unconfirmed future ideas and is the working blueprint for the repository.
+> **Author:** Akanni Shonibare
+> **Status:** Phase 1 client-side workspace foundation in progress
 
-## Product direction
+## My product direction
 
-Omni AI Tutor is evolving from an AI assistant into a digital learning environment: an AI tutor, structured learning platform, assessment system, personalization layer, progress tracker, and quality-audit lab in one product.
+I am building Omni AI Tutor as a digital learning environment, not just a chatbot. My goal is to combine AI tutoring, structured learning, knowledge capture, assessment, personalization, progress tracking, and a quality-audit layer in one product.
 
-The v1 foundation established conversational help. V2 added structured lessons, questions, quizzes, feedback, and a more complete web application. V3 combines those capabilities with persistent learning context, measurable progress, and a public product surface.
+The original OmniTutor foundation was established as **v2.9**. V3 is the next product direction built on that foundation. V2 established the immersive workspace pattern, while V3 gives each major capability its own public URL and connects the private workspace to a crawlable public learning surface.
 
-## Verified V3 capabilities
+## My verified V3 capabilities
 
-| Capability | Product intent | Current repository status |
+| Capability | My product intent | Current status |
 | --- | --- | --- |
-| AI Tutor / Neural Hub | Natural questions, explanations, tutoring guidance, and contextual conversations | Local-first prototype with optional Gemini request |
-| Knowledge Canvas | Persistent notes or packets that can be focused as tutor context | Implemented in `app.js` with localStorage |
-| Quiz Engine | Questions, answers, scoring, and feedback for active recall | Implemented as a prototype with generated or fallback questions |
-| Personalized learning | Adapt explanations to the learner’s context and demonstrated needs | Foundation: packet focus and learner context |
-| Student progress | Track scores, performance, learning history, weaknesses, and improvement | Next implementation layer |
-| Omni Tutor Audit Lab | Evaluate tutor quality instead of assuming model output is correct | Planned evaluation and regression surface |
-| AI/ML experimentation | Gemini / Google GenAI, Hugging Face, Python, and model experimentation | Provider boundary is planned; client key flow is temporary prototype behavior |
-| Public deployment and SEO | Crawlable product surface, canonical metadata, Search Console readiness | Landing-page metadata exists; route expansion remains |
+| AI Tutor / Neural Hub | I want learners to ask natural questions, receive explanations, and get contextual guidance. | Local-first prototype with optional Gemini request |
+| Knowledge Canvas | I want learners to save notes and packets, focus them, pin them, and reuse them as context. | Implemented with browser localStorage |
+| Quiz Engine | I want learners to test their understanding with questions, scoring, and feedback. | Implemented with generated and fallback questions |
+| Personalized learning | I want explanations and practice to reflect the learner’s chosen context and demonstrated needs. | Foundation implemented through packet focus |
+| Progress | I want progress to come from actual quiz and review activity. | Local packet and attempt metrics implemented |
+| Omni Tutor Audit Lab | I want to evaluate tutor quality instead of assuming that AI output is correct. | Planned evaluation surface |
+| AI/ML experimentation | I am exploring Gemini, Google GenAI, Hugging Face, Python, and related model workflows. | Provider boundary planned |
+| Public SEO surface | I want Google and learners to understand the product through useful, crawlable pages. | Public routes, metadata, internal links, sitemap, and robots rules implemented |
 
-## Explicitly unconfirmed
+## Features I have not confirmed as shipped
 
-Voice tutor, PDF learning workflows, parent dashboards, teacher dashboards, and other adjacent features are not treated as historical V3 requirements until separately confirmed. They may be proposed in later phases, but should not be represented as shipped capabilities.
+I am not treating voice tutoring, PDF learning workflows, parent dashboards, teacher dashboards, collaboration, or other adjacent ideas as shipped V3 capabilities. I may evaluate them later, but I will not present them as complete until I build and verify them.
 
-## Working architecture
+## My current architecture
 
-The production direction is a server-rendered or pre-rendered public web surface plus an authenticated application surface. Private packets, conversations, files, sessions, quizzes, and analytics must be access-controlled and excluded from public indexing. Managed AI credentials belong on the server; browser API-key entry is retained only as a development fallback until a gateway is available.
+For now, I am keeping the product serverless and client-first. The public landing page and learning pages are static HTML. The local workspace lives at `/app/`, uses browser storage, and is marked noindex. This lets me improve the product experience without pretending that authentication, private storage, or server-side security already exist.
 
-### Core layers
+When I introduce a server, I will separate the public web, authenticated application, AI gateway, execution service, data layer, storage, observability, and delivery concerns. Production provider credentials will remain server-side. Any BYOK implementation will need encryption, user scoping, redaction, removal controls, and exclusion from analytics.
 
-1. **Public surface:** product overview, learning content, documentation, policies, changelog, and SEO metadata.
-2. **Workspace shell:** tutor sessions, Knowledge Canvas, quizzes, progress, and settings.
-3. **AI gateway:** model registry, streaming, retries, redaction, usage tracking, and cost controls.
-4. **Execution and data services:** isolated code execution, relational records, private object storage, and audit events.
-5. **Quality and trust:** accessibility, privacy, security, evaluation, observability, and rollback checks.
+## My public route structure
 
-## Delivery roadmap
+The public homepage is `/`. My feature pages are `/features/ai-tutor/`, `/features/ai-quizzes/`, `/features/coding-tutor/`, `/features/language-learning/`, and `/features/personalized-learning/`. My Learning pages cover `/learning/mathematics/`, `/learning/programming/`, `/learning/science/`, and `/learning/languages/`.
+
+I also publish `/resources/`, `/blog/`, `/changelog/`, `/about/`, `/pricing/`, `/contact/`, `/privacy/`, `/terms/`, and `/security/`. The private browser workspace is `/app/` and is excluded from the sitemap.
+
+## My roadmap
 
 ### Phase 0 — Digital foundation
 
-Completed: SEO-aware public entry point, product direction, and initial repository documentation.
+I completed the initial product direction, public metadata, project documentation, and static foundation.
 
-### Phase 1 — Core workspace
+### Phase 1 — Client-side core workspace
 
-Current: connect the tutor workspace to the existing local-first state model; make packets, focus mode, quizzes, ProCode, and model settings discoverable in one application shell.
-
-Next: add named sessions, export/import, better empty states, accessible navigation, model status, and a server-side AI gateway boundary.
+I am completing the local-first workspace shell: Assistant, Knowledge Canvas, Practice, Progress, Settings, responsive behavior, local quiz attempts, packet counts, and clearer empty states. I am intentionally deferring server-dependent features.
 
 ### Phase 2 — Learning engine
 
-Add tutoring modes, quiz configuration, explanations, attempt history, progress summaries, objectives, missed-concept tags, spaced review, and the Audit Lab evaluation workflow.
+I will add richer tutoring modes, quiz configuration, explanations, attempt history, objectives, missed-concept tags, spaced review, and the Omni Tutor Audit Lab.
 
-### Phase 3 — Multimodal and collaboration
+### Phase 3 — Server-backed product
 
-After the core learning loop is stable, evaluate vision, document processing, voice, shared hubs, roles, moderation, and activity history as separately scoped features.
+When the product is ready, I will add authentication, a server-side AI gateway, private persistence, secure file storage, isolated code execution, and account-level analytics.
 
-### Phase 4 — Public growth and launch quality
+### Phase 4 — Multimodal, collaboration, and launch quality
 
-Build crawlable public routes, learning content, sitemap and robots rules, policy pages, structured-data validation, accessibility checks, security review, Core Web Vitals monitoring, and staged release validation.
+I will evaluate vision, documents, voice, shared hubs, roles, moderation, accessibility, security, performance, structured-data validation, and staged release checks as separate workstreams.
 
-## Definition of done for the first workspace slice
+## My first workspace definition of done
 
-- A learner can ask the tutor a question and see a clear local or live response.
-- A learner can create, focus, pin, and delete a Knowledge Canvas packet.
-- A learner can generate a short quiz and receive immediate feedback.
-- The UI communicates the V3 learning loop: ask, capture, practice, reflect.
-- Empty and offline states are useful rather than misleading.
-- No claim is made that unimplemented multimodal, voice, collaboration, or production security features are already shipped.
+I consider the first client-side slice useful when a learner can ask the tutor a question, create and focus a Canvas packet, generate a quiz, receive feedback, and see local progress signals. The interface must clearly communicate the loop: **ask, capture, practice, reflect**.
 
-## Source note
+I will not claim that server-backed privacy, secure execution, voice, vision, or collaboration are complete until those features are implemented and tested.
 
-This blueprint is reconstructed from the supplied project history. It intentionally marks uncertain ideas as unconfirmed rather than presenting them as historical requirements.
+## Project history
 
----
+I maintain links to the earlier projects so the evolution is visible:
 
-**Repository:** `shonibareakanni009-ctrl/omni-tutor-ai-v3`
+- [Omni AI Ruby](https://omni-ai-ruby.vercel.app/)
+- [Omni AI Tutor v1](https://omni-ai-tutor-v1.netlify.app/)
+- [Omni AI Tutor v2](https://omni-ai-tutor-v2.netlify.app/)
+- [Omni AI Tutor v3 repository](https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3)

@@ -1,259 +1,100 @@
-# OmniTutor v2.9: The Hyper-Hub 🚀
+# Omni AI Tutor v3
 
-OmniTutor is a next-generation **Knowledge Synthesis** platform designed to bridge the gap between AI conversation and long-term retention. By combining **Neural Hub** (conversational AI), **Knowledge Canvas** (persistence), and the **Quiz Engine** (validation), OmniTutor creates a closed-loop learning environment.
+**Owner:** Akanni Shonibare
+**Original V3 foundation:** OmniTutor v2.9
+**Current phase:** Phase 1 — Client-side Core Workspace
 
-## 🌌 Core Architecture
+Omni AI Tutor is my AI learning and building project. I am developing it to help learners ask better questions, understand explanations, capture useful knowledge, practice active recall, and eventually build projects with guided support.
 
-### 1) Neural Hub (AI Interface)
-- **Contextual Memory:** Automatically pulls context from your saved Canvas packets.
-- **Document Focusing:** Pin a specific packet to force the AI to reason exclusively within that document’s boundaries.
-- **LaTeX Integration:** Full rendering support for mathematical and scientific notation via MathJax.
+The project is evolving from the original **OmniTutor v2.9** foundation. V2 established the immersive workspace direction. V3 keeps that workspace idea, improves the user experience, adds a clearer learning loop, and gives major public features their own crawlable URLs.
 
-### 2) Knowledge Canvas
-- **Packet Persistence:** Save AI responses as permanent Knowledge Packets.
-- **Focus Mode:** Toggle specific packets into the AI’s active attention window.
-- **Micro-Learning:** Documents are kept concise to encourage rapid review and chunking of information.
+## Current product surfaces
 
-### 3) Quiz Engine
-- **Generative Assessment:** Uses the Gemini 2.0 Flash model to analyze your current Canvas and generate 3-question MCQ assessments.
-- **Socratic Validation:** Tests your understanding of your own saved data to ensure active recall.
+The root homepage at `/` is my public landing page. It explains the product and links to the public learning content. The browser workspace is at `/app/`; it is intentionally marked noindex because it is currently a local-first prototype rather than a server-backed private application.
 
-### 4) Neural Mind Map
-- **Spatial Relationship:** Visualizes your knowledge ecosystem as a constellation.
-- **Dynamic Growth:** The map expands automatically as you pin more packets to the Canvas.
+The public feature pages include `/features/ai-tutor/`, `/features/ai-quizzes/`, `/features/coding-tutor/`, `/features/language-learning/`, and `/features/personalized-learning/`. The public Learning pages include mathematics, programming, science, and languages.
 
-## 🛠 Setup & Synchronization
-- **API Key:** Obtain a Gemini API Key from Google AI Studio.
-- **Config Node:** Navigate to Settings in the sidebar and enter your key.
-- **ProCode:** Use the built-in ProCode editor for drafting scripts or prototyping alongside your tutor.
+I also publish `/resources/`, `/blog/`, `/changelog/`, `/about/`, `/pricing/`, `/contact/`, `/privacy/`, `/terms/`, and `/security/`.
 
-## 🗺 Future Roadmap (v3.0 and Beyond)
+## Client-side workspace capabilities
 
-We are actively developing the following **Hyper-Sync** features:
+The current browser workspace includes the following capabilities:
 
-### 🎙 Audio Synthesis (OmniVoice)
-- **Neural Lectures:** Convert your Knowledge Canvas into a podcast-style audio lecture.
-- **Voice Interactivity:** Ask questions using voice-to-text and receive spoken explanations.
+- AI Tutor with local fallback responses and optional Gemini requests.
+- Knowledge Canvas packets saved in browser localStorage.
+- Focus mode for grounding tutor responses in selected packets.
+- Quiz generation from saved learning packets.
+- Immediate quiz feedback.
+- Local quiz attempt history and average score signals.
+- Packet counts and progress indicators.
+- ProCode scratchpad storage.
+- MathJax support for mathematical notation.
+- Responsive Assistant, Canvas, Practice, Progress, Code Lab, Mind Map, and Settings views.
 
-### 🖼 Vision Integration
-- **Diagram Interpretation:** Upload images of handwritten notes or complex diagrams for the AI to convert into Canvas packets.
-- **Automatic Infographics:** Generate SVG diagrams directly from text-based knowledge packets.
+These capabilities are intentionally client-side for now. I am not claiming that server-backed accounts, private storage, secure code execution, or production analytics are already complete.
 
-### 👥 Collaborative Portals
-- **Shared Hubs:** Create a public Hub ID to share your Knowledge Canvas with peers.
-- **Group Quizzing:** Real-time competitive assessments based on shared study materials.
+## Public SEO implementation
 
-### 📈 Predictive Analytics
-- **Retention Tracking:** The system will track quiz performance to identify weak nodes in your mind map.
-- **Spaced Repetition:** Automatic reminders to review specific packets before you are likely to forget them.
+I created a public SEO surface so Google and learners can discover useful pages through normal links. Each public page has a unique title, meta description, canonical URL, robots directive, Open Graph data, Twitter data, JSON-LD, visible content, and internal links.
 
-## 📜 Technical Stack
-- **Frontend:** HTML5, Tailwind CSS, FontAwesome.
-- **Intelligence:** Google Generative AI (Gemini 2.5 Flash).
-- **Rendering:** MathJax (LaTeX), SVG (Mind Mapping).
-- **Persistence:** LocalStorage (in-memory browser state).
+I maintain `sitemap.xml` with the public URLs only. I maintain `robots.txt` with the sitemap reference and rules for internal paths. The private `/app/` route is excluded from the sitemap.
 
----
+I use `build_seo_pages.py` to generate public pages, the sitemap, and robots rules. I use `validate_seo.py` to verify page metadata, route counts, sitemap structure, and required public links.
 
-**OmniTutor v2.9 — Synthesizing the Future of Learning.**
+## Project lineage
 
-# Omni AI v3 Implementation Blueprint
+I keep the earlier projects connected to V3 so the evolution is clear:
 
-> **Status:** Phase 0 (Digital Foundation) is complete. Implementation of the **Core Workspace** is currently underway. This document outlines the verified architecture and milestones for the v3 release.
+- [Omni AI Ruby](https://omni-ai-ruby.vercel.app/)
+- [Omni AI Tutor v1](https://omni-ai-tutor-v1.netlify.app/)
+- [Omni AI Tutor v2](https://omni-ai-tutor-v2.netlify.app/)
+- [Omni AI Tutor v3 on GitHub](https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3)
 
-## Product direction
+## Local development
 
-Omni AI v3 should become an AI learning and building workspace that combines the current Neural Hub, Knowledge Canvas, Quiz Engine, ProCode editor, LaTeX support, and Neural Mind Map with verified multimodal learning, safe code execution, project workspaces, collaborative study, and measurable retention. It should be a product upgrade, not only a theme or model-name change.
+I can open the static project directly or serve it with any static HTTP server. For example:
 
-The product should have two surfaces: a public, crawlable knowledge surface for marketing pages, original tutorials, examples, documentation, policies, security information, and changelog content; and a private application surface for authenticated sessions, Canvas packets, files, quizzes, projects, model settings, and personal analytics. Private user content must not be indexed.
+```bash
+python3 -m http.server 4173 --bind 0.0.0.0
+```
 
-## V3 capabilities
-
-| Capability | Requirement |
-|---|---|
-| Neural Hub | Streaming conversations, named sessions, search, export, context controls, memory on/off, citations to Canvas packets, and visible model status |
-| Knowledge Canvas | Versioned packets, tags, folders, backlinks, source references, focus mode, import/export, search, and deletion controls |
-| ProCode Lab | JavaScript first, followed by Python, HTML/CSS, and SQL adapters with isolated execution, run/stop/reset, file tree, console, error locations, diffs, and resource limits |
-| Quiz Engine | Topic, level, question count, language, difficulty, objectives, explanations, missed-concept tags, retries, history, and spaced-review reminders |
-| Vision | Image, PDF, diagram, screenshot, handwritten-code, and error-message uploads with progress, cancellation, processing state, and reviewable extracted text |
-| OmniVoice | Accessible text-to-speech and speech-to-text with visible transcripts, controls, and clear provider/error states |
-| Neural Mind Map | Accurate packet relationships, keyboard-accessible navigation, exportable SVG/PNG, and a non-visual list alternative |
-| Collaboration | Shared hubs, roles, revocation, activity history, moderation controls, and private-by-default permissions |
-| Predictive learning | Explainable progress summaries and user-controlled reminders based on actual quiz and review activity |
-| AI gateway | One server-side model registry for `models/gemini-3.6-flash`, fallbacks, capability labels, context limits, usage tracking, retries, timeouts, and cost controls |
-| Trust and safety | Privacy, Terms, Security, About, Contact, Status, Changelog, account deletion, data export, redaction, audit logs, and verification notices for high-impact topics |
-
-## Security and privacy requirements
-
-The client must not contain a shared production API key. Managed provider credentials must remain on the server. If bring-your-own-key is supported, keys must be encrypted at rest, scoped to the user, redacted from logs, removable from settings, and excluded from analytics and error reports.
-
-Uploaded files, Canvas packets, conversations, memories, and shared hubs require explicit ownership and access rules. Private content must not appear in public routes, search results, sitemap entries, logs, or error messages. File uploads need type, size, malware, retention, and deletion controls. AI-generated code must execute in an isolated environment with CPU, memory, time, output, and network limits.
-
-## Recommended architecture
-
-A production v3 should move beyond a single static HTML file. Use a server-rendered or statically generated React application with a typed API, relational data, private object storage, and a server-side AI gateway.
-
-| Layer | Responsibility |
-|---|---|
-| Public web | Server-rendered marketing, learning hub, tutorials, documentation, policies, changelog, and support pages |
-| Application shell | Authenticated workspace, Canvas, sessions, quizzes, projects, uploads, settings, and accessibility |
-| AI gateway | Provider adapters, model registry, streaming, prompt policy, retries, redaction, usage, and cost accounting |
-| Execution service | Isolated language runners with resource and network limits |
-| Data layer | Users, sessions, messages, packets, files, quiz attempts, memories, hubs, usage, and audit events |
-| Storage | Private object storage with signed URLs and lifecycle policies |
-| Observability | Structured logs, error tracking, latency, model failures, usage, abuse signals, and uptime |
-| Delivery | CDN, immutable assets, security headers, sitemap generation, robots rules, and deployment checks |
-
-## Google SEO plan
-
-Google processes JavaScript sites through crawling, rendering, and indexing. Server-side rendering or pre-rendering is preferred because it improves initial performance and makes important content available to crawlers and users without depending on a later API request.[4]
-
-### Crawlability and indexation
-
-- Publish a root `robots.txt` and allow public marketing, learning, documentation, changelog, help, and policy routes.
-- Disallow private workspace, account, session, Canvas, admin, API, preview, and internal-search routes.
-- Generate an XML sitemap containing only canonical, public, indexable URLs and submit it through Google Search Console.
-- Return meaningful `200`, `404`, `410`, `401`, and `403` status codes rather than soft errors.
-- Use normal crawlable links with real `href` values; do not use URL fragments as the only representation of public pages.
-- Use one canonical URL per page and redirect duplicate hostnames, protocols, and slash variants consistently.
-
-### Public page map
-
-| Route | Purpose | Indexing |
-|---|---|---|
-| `/` | OmniTutor learning and building workspace | Index |
-| `/features/neural-hub` | Conversational tutoring and contextual memory | Index |
-| `/features/knowledge-canvas` | Knowledge packet persistence and organization | Index |
-| `/features/procode` | Safe browser code laboratory | Index |
-| `/features/quiz-engine` | Active recall and assessment workflow | Index |
-| `/features/vision` | Image and document learning | Index |
-| `/learn/` | Original learning hub | Index |
-| `/learn/javascript/` and `/learn/python/` | Original tutorials and examples | Index |
-| `/use-cases/students` and `/use-cases/educators` | User workflows | Index |
-| `/security`, `/privacy`, `/terms`, `/about`, `/contact`, `/changelog` | Trust and support pages | Index |
-| `/app`, `/workspace`, `/canvas` | Private user application | Noindex or access-controlled |
-| `/api/*`, `/admin/*`, `/search?*` | Internal or duplicate surfaces | Disallow and/or noindex |
-
-### Metadata, structured data, and content
-
-Every public page needs a unique concise `<title>`, unique meta description, canonical URL, one clear primary heading, useful visible copy, Open Graph metadata, and Twitter card metadata. Titles and descriptions should describe the actual page rather than repeat a keyword list. Google has stated that the obsolete `meta keywords` tag is not used for ranking.[3]
-
-Add truthful JSON-LD in server-rendered output. The home page should use `Organization` and `WebSite`; product pages may use `SoftwareApplication` or `WebApplication`; original tutorials may use `Article`; and visible breadcrumbs may use `BreadcrumbList`. Do not fabricate ratings, reviews, prices, authors, dates, or organization details. Structured data must match visible content and should be validated with Google’s Rich Results Test and Search Console.[5]
-
-The learning hub should publish original, technically reviewed tutorials with an identifiable author, last-updated date, prerequisites, version context, code examples, expected output, primary documentation links, and a correction path. Use descriptive internal links and avoid interchangeable keyword pages. Publish real trust information, not generated testimonials or stock avatars.
-
-### Media and performance
-
-Use optimized local AVIF or WebP assets where practical, descriptive filenames, meaningful alt text, width and height attributes, responsive sources, and lazy loading below the fold. Google recommends placing quality images near relevant text and using descriptive alt text.[3]
-
-Track Core Web Vitals. The target is LCP at or below 2.5 seconds, INP below 200 milliseconds, and CLS below 0.1 at the 75th percentile.[6] Reduce third-party scripts, reserve image dimensions, split private application code, fingerprint static assets, cache immutable assets, and defer non-critical work.
-
-### Measurement
-
-Verify the canonical domain in Google Search Console, submit the sitemap, inspect representative URLs, monitor indexing and enhancements, and measure organic landing pages, sign-up, activation, retained learning sessions, Core Web Vitals, JavaScript errors, server latency, failed AI calls, upload failures, and cost per active user. Google notes that changes can take from hours to months to appear in search, so evaluate SEO changes over an appropriate period.[3]
-
-## Implementation roadmap
-
-### Phase 0: Digital Foundation (Completed)
-
-Implementation of the SEO-optimized landing page and product specification. Defined the product vision, core features, and roadmap to guide the v3 development. The `index.html` now serves as the high-quality entry point for the project.
-
-### Phase 1: Core Workspace (In Progress)
-
-Implementation of the secure, authenticated learning environment.
-- **Backend:** Full-stack architecture with tRPC, Drizzle ORM, and secure AI Gateway.
-- **AI Engine:** Native Gemini `models/gemini-3.6-flash` integration with server-side credential management.
-- **Workspace:** Elegant dark UI with project-based navigation, Knowledge Canvas, and secure file storage.
-- **Safety:** Scoped code workspace with isolated execution foundations.
-
-### Phase 2: Learning engine
-
-Implement tutoring modes, quiz configuration, explanations, history, spaced review, learning objectives, progress summaries, voice, vision, and collaboration permissions.
-
-### Phase 3: Public growth surface
-
-Build server-rendered landing pages, the learning hub, documentation, canonical metadata, JSON-LD, sitemap, robots rules, policy pages, changelog, and Search Console verification.
-
-### Phase 4: Quality and launch
-
-Run security review, accessibility audit, cross-browser tests, unit and integration tests, crawl tests, structured-data validation, Lighthouse checks, Core Web Vitals monitoring, backup/restore checks, and staged release validation.
-
-## Definition of done
-
-- [ ] All verified v1 capabilities remain available: tutoring, code generation, browser execution, code improvement, quizzes, scoring, explanations, and progress feedback.
-- [ ] Vision, document, and voice features work in the product rather than existing only as README claims.
-- [ ] Users have projects, sessions, files, Canvas packets, exports, memory controls, and transparent model selection.
-- [ ] API keys and private content are not exposed in public client code or indexed routes.
-- [ ] Public pages are server-rendered or pre-rendered and contain meaningful HTML without requiring an API call to reveal the main content.
-- [ ] Every indexable page has a unique title, description, canonical URL, primary heading, and useful visible content.
-- [ ] `robots.txt`, `sitemap.xml`, status codes, internal links, redirects, and noindex rules are tested.
-- [ ] JSON-LD is truthful, aligned with visible content, and validated with Google’s tools.
-- [ ] Images have descriptive alt text, stable URLs, dimensions, and responsive delivery.
-- [ ] Core Web Vitals targets are measured and monitored.
-- [ ] Privacy, Terms, Security, About, Contact, Support, and Changelog pages are live.
-- [ ] Automated tests, accessibility checks, security checks, error monitoring, usage monitoring, and rollback procedures are in place.
-
-## References
-
-[1]: https://github.com/shonibareakanni009-ctrl/Omni-ai "Omni AI v1 repository"
-
-[2]: https://github.com/shonibareakanni009-ctrl/Omni-ai-tutor-v2 "Omni AI v2 repository"
-
-[3]: https://developers.google.com/search/docs/fundamentals/seo-starter-guide "Google Search Engine Optimization Starter Guide"
-
-[4]: https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics "Google Search Central: JavaScript SEO basics"
-
-[5]: https://developers.google.com/search/docs/appearance/structured-data/software-app "Google Search Central: Software app structured data"
-
-[6]: https://developers.google.com/search/docs/appearance/core-web-vitals "Google Search Central: Core Web Vitals and Google Search"
-
----
-
-**Implementation status:** Phase 0 (Digital Foundation) is complete. Phase 1 (Core Workspace) is currently being implemented. The v3 implementation is evolving into a secure, persistent, and elegant dark workspace for AI-assisted learning.
-
-
-## Public learning SEO surface
-
-The repository now includes a crawlable public route structure using **Learning** rather than Subjects. Each generated public page has a unique title, meta description, canonical URL, robots directive, Open Graph fields, Twitter fields, JSON-LD, a primary heading, useful visible copy, and internal links to related learning routes.
-
-### Public URLs
-
-- `/` — Omni AI Tutor workspace and product entry point
-- `/features/ai-tutor/`
-- `/features/ai-quizzes/`
-- `/features/coding-tutor/`
-- `/features/language-learning/`
-- `/features/personalized-learning/`
-- `/learning/`
-- `/learning/mathematics/`
-- `/learning/programming/`
-- `/learning/science/`
-- `/learning/languages/`
-- `/resources/`
-- `/resources/articles/`
-- `/resources/tutorials/`
-- `/resources/study-guides/`
-- `/about/`
-- `/pricing/`
-- `/contact/`
-- `/privacy/`
-- `/terms/`
-- `/security/`
-- `/changelog/`
-
-The generated discovery files are available at `/sitemap.xml` and `/robots.txt`. The canonical production domain is currently `https://omni-ai-tutor-v3.netlify.app`. If the deployment domain changes, update `BASE` in `build_seo_pages.py`, regenerate the pages, and commit the result.
-
-To regenerate the public pages after editing route copy:
+I regenerate the public SEO pages after editing route copy with:
 
 ```bash
 python3 build_seo_pages.py
 ```
 
-### Search Console launch checklist
+I run the SEO checks with:
 
-1. Deploy the repository to the canonical Netlify domain.
-2. Confirm `/sitemap.xml` returns `200` and contains only public URLs.
-3. Confirm `/robots.txt` returns `200` and references the sitemap.
-4. Verify the domain in Google Search Console and submit `sitemap.xml`.
-5. Use URL Inspection on the homepage and the principal Learning and Features pages.
-6. Validate structured data, canonical tags, internal links, mobile rendering, and real `404` responses after deployment.
+```bash
+python3 validate_seo.py
+```
+
+## Roadmap
+
+### Phase 0 — Digital foundation
+
+I completed the initial product specification, public metadata, project documentation, and static foundation.
+
+### Phase 1 — Client-side core workspace
+
+I am improving the application shell, learning loop, local quizzes, progress signals, responsive behavior, and empty states without introducing a server.
+
+### Phase 2 — Learning engine
+
+I plan to add richer tutoring modes, configurable quizzes, explanations, missed-concept tags, review history, objectives, and the Omni Tutor Audit Lab.
+
+### Phase 3 — Server-backed product
+
+I will add authentication, server-side model access, private persistence, storage, secure execution, and account-level analytics only when the product is ready for that architecture.
+
+## Project documents
+
+- [My V3 blueprint](OMNI_AI_TUTOR_V3_BLUEPRINT.md)
+- [My implementation log](IMPLEMENTATION_LOG.md)
+- [Sitemap](sitemap.xml)
+- [Robots rules](robots.txt)
+
+## License
+
+I retain the existing repository license and project ownership under my GitHub account.
