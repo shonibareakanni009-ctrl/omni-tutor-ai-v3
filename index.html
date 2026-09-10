@@ -1,263 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omni AI Tutor v3 | Next-Generation AI Learning Environment</title>
-    
-    <!-- Primary SEO Metadata -->
-    <meta name="description" content="Omni AI Tutor v3 is an immersive AI-powered learning environment featuring multimodal integration, real-time code execution, and personalized tutoring modes.">
-    <meta name="keywords" content="AI Tutor, Personalized Learning, Multimodal AI, Code Execution, Learning Management, Educational AI">
-    <link rel="canonical" href="https://omni-ai-tutor-v3.vercel.app">
-    <meta name="author" content="Akanni Shonibare">
-    <meta name="theme-color" content="#0ea5e9">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://omni-ai-tutor-v3.vercel.app/">
-    <meta property="og:title" content="Omni AI Tutor v3 | Next-Generation AI Learning Environment">
-    <meta property="og:description" content="Immersive AI-powered learning with multimodal support and real-time workspace tools.">
-    <meta property="og:image" content="https://omni-ai-tutor-v3.vercel.app/og-image.png">
-    <meta name="google-site-verification" content="cPEpEG_wT8xGk5-7-Cy-Di-PWat6QXKiIWnYPntOIvM" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://omni-ai-tutor-v3.vercel.app/">
-    <meta property="twitter:title" content="Omni AI Tutor v3 | Next-Generation AI Learning Environment">
-    <meta property="twitter:description" content="Immersive AI-powered learning with multimodal support and real-time workspace tools.">
-    <meta property="twitter:image" content="https://omni-ai-tutor-v3.vercel.app/og-image.png">
-
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Omni AI Tutor v3",
-      "operatingSystem": "Web",
-      "applicationCategory": "EducationApplication",
-      "description": "An immersive AI-powered learning environment with multimodal support and real-time workspace tools.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Akanni Shonibare"
-      }
-    }
-    </script>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0ea5e9',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omni AI Tutor v3 — Learn with momentum</title>
+  <meta name="description" content="Omni AI Tutor v3 is a local-first learning workspace for asking, capturing, practicing, and reflecting with an AI tutor.">
+  <meta name="author" content="Akanni Shonibare">
+  <meta name="theme-color" content="#07111f">
+  <link rel="canonical" href="https://omni-ai-tutor-v3.vercel.app">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Omni AI Tutor v3 — Learn with momentum">
+  <meta property="og:description" content="An AI tutor, Knowledge Canvas, quiz engine, and progress workspace in one focused learning loop.">
+  <meta property="og:url" content="https://omni-ai-tutor-v3.vercel.app/">
+  <meta name="google-site-verification" content="cPEpEG_wT8xGk5-7-Cy-Di-PWat6QXKiIWnYPntOIvM">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{ink:'#07111f',cyanx:'#35d3c4',violetx:'#9b8cff'}}}}</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
-<body class="bg-slate-950 text-slate-200 selection:bg-primary selection:text-white">
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold">O</span>
-                    </div>
-                    <span class="text-xl font-bold tracking-tight">OMNI <span class="text-primary text-sm font-medium">v3</span></span>
-                </div>
-                <div class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#vision" class="hover:text-primary transition-colors">Vision</a>
-                    <a href="#features" class="hover:text-primary transition-colors">Features</a>
-                    <a href="#roadmap" class="hover:text-primary transition-colors">Roadmap</a>
-                    <a href="https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3" class="text-primary">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="pt-32 pb-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-                The Future of AI Learning
-            </h1>
-            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-                Omni AI Tutor v3 is an immersive environment designed to surpass traditional chat interfaces with multimodal intelligence and a powerful real-time workspace.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#roadmap" class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-sky-500 transition-all shadow-lg shadow-primary/20">
-                    View Roadmap
-                </a>
-                <a href="#features" class="px-8 py-4 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-700 transition-all">
-                    Explore Features
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Product Vision -->
-    <section id="vision" class="py-20 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Product Vision</h2>
-                    <p class="text-slate-400 mb-4">
-                        Omni AI Tutor v3 aims to redefine the relationship between student and AI. While v1 and v2 established the foundation of AI tutoring, v3 creates a comprehensive ecosystem where the AI is not just a collaborative partner in a shared workspace.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Beyond simple chat interfaces</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Immersive learning sessions</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Personalized memory and context</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl">
-                    <div class="flex space-x-2 mb-4">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="space-y-4 font-mono text-sm">
-                        <div class="text-primary"># Omni AI v3 Workspace</div>
-                        <div class="text-slate-400">> Initializing learning session...</div>
-                        <div class="text-green-400">> Multimodal engine ready.</div>
-                        <div class="text-slate-200">> How can I help you master React today?</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body class="min-h-screen bg-ink text-slate-100">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <nav class="topbar">
+    <a href="#top" class="brand"><span class="brand-mark">O</span><span>OMNI <small>v3</small></span></a>
+    <div class="topbar-actions"><span class="status-dot"></span><span class="text-xs text-slate-400">Local-first workspace</span><a href="OMNI_AI_TUTOR_V3_BLUEPRINT.md" class="btn btn-ghost hidden sm:inline-flex">Blueprint</a><a href="https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3" class="btn btn-ghost">GitHub</a></div>
+  </nav>
+  <main id="top" class="workspace">
+    <aside class="sidebar">
+      <div class="eyebrow">YOUR LEARNING LOOP</div>
+      <h1>Learn with<br><span>momentum.</span></h1>
+      <p class="side-copy">Ask better questions, turn insights into a Canvas, then practice what you know.</p>
+      <div class="loop-list">
+        <div class="loop-step active"><b>01</b><span><strong>Ask</strong><small>Neural Hub</small></span></div>
+        <div class="loop-step"><b>02</b><span><strong>Capture</strong><small>Knowledge Canvas</small></span></div>
+        <div class="loop-step"><b>03</b><span><strong>Practice</strong><small>Quiz Engine</small></span></div>
+        <div class="loop-step"><b>04</b><span><strong>Reflect</strong><small>Progress signals</small></span></div>
+      </div>
+      <div class="sidebar-card"><div class="flex justify-between items-center"><span class="eyebrow">SESSION SIGNAL</span><span class="signal-bars"><i></i><i></i><i></i><i></i></span></div><strong>Build your first streak</strong><p>Add a packet and complete a quiz to start tracking progress.</p></div>
+      <div class="sidebar-links"><a href="#workspace">Workspace</a><a href="#canvas">Canvas</a><a href="#practice">Practice</a><a href="#settings">Settings</a></div>
+    </aside>
+    <section class="content" id="workspace">
+      <header class="welcome-row"><div><div class="eyebrow">THURSDAY · LEARNING STUDIO</div><h2>Good to see you, learner.</h2><p class="text-slate-400">What would you like to understand today?</p></div><div class="streak"><span>✦</span><div><strong>0 day</strong><small>learning streak</small></div></div></header>
+      <div class="grid xl:grid-cols-[1.15fr_.85fr] gap-5">
+        <section class="panel tutor-panel" id="tutor">
+          <div class="panel-head"><div><span class="section-label">NEURAL HUB</span><h3>Ask your tutor</h3></div><span class="live-pill"><i></i> ready</span></div>
+          <div id="chatLog" class="chat-log"><div class="welcome-message"><div class="ai-orb">✦</div><div><strong>Hi, I’m Omni.</strong><p>Ask me to explain a concept, coach you through a problem, or turn a topic into a study plan.</p><div class="prompt-chips"><button class="chip" onclick="document.getElementById('promptInput').value='Explain this like I am learning it for the first time.'">Explain a concept</button><button class="chip" onclick="document.getElementById('promptInput').value='Quiz me on the most important ideas.'">Quiz me</button><button class="chip" onclick="document.getElementById('promptInput').value='Help me make a study plan.'">Make a study plan</button></div></div></div></div>
+          <form id="chatForm" class="composer"><input id="promptInput" class="input" autocomplete="off" placeholder="Ask anything… e.g. ‘Why does recursion work?’"><button class="btn btn-primary" type="submit">Send <span>↗</span></button></form>
+          <div class="panel-foot"><span>Context: <select id="focusSelect" class="select"><option value="all">All packets (default)</option></select></span><button id="summarizeBtn" class="text-button">Summarize focus</button><button id="clearChatBtn" class="text-button">Clear</button></div>
+        </section>
+        <section class="panel canvas-panel" id="canvas">
+          <div class="panel-head"><div><span class="section-label">KNOWLEDGE CANVAS</span><h3>Turn insight into memory</h3></div><button id="newPacketBtn" class="btn btn-primary">+ Add packet</button></div>
+          <div id="packetList" class="packet-list"><div class="empty-state">Your Canvas is ready.<br><span>Add a note, explanation, or idea to make it reusable.</span></div></div>
+          <div class="map-wrap"><div class="map-title"><span>Neural map</span><small>Pinned concepts</small></div><svg id="mindMap" viewBox="0 0 320 180" role="img" aria-label="Knowledge relationship map"></svg></div>
+        </section>
+      </div>
+      <div class="grid xl:grid-cols-[.9fr_1.1fr] gap-5 mt-5" id="practice">
+        <section class="panel practice-panel"><div class="panel-head"><div><span class="section-label">QUIZ ENGINE</span><h3>Practice active recall</h3></div><button id="generateQuizBtn" class="btn btn-outline">Generate quiz</button></div><p class="muted-copy">Use your Canvas to test understanding, not just recognition.</p><div id="quizContainer" class="quiz-container"><div class="empty-state compact">No quiz yet.<br><span>Generate one from your saved packets.</span></div></div></section>
+        <section class="panel progress-panel"><div class="panel-head"><div><span class="section-label">PROGRESS SIGNALS</span><h3>Your learning system</h3></div><span class="coming-soon">FOUNDATION</span></div><div class="progress-grid"><div class="metric"><span>PACKETS</span><strong id="packetMetric">0</strong><small>captured ideas</small></div><div class="metric"><span>QUIZ SCORE</span><strong>—</strong><small>complete a quiz</small></div><div class="metric"><span>FOCUS</span><strong>100%</strong><small>context clarity</small></div></div><div class="reflection"><span class="reflection-icon">↗</span><div><strong>Reflection comes next</strong><p>Progress will grow from real quiz attempts and review activity — never guesswork.</p></div></div></section>
+      </div>
+      <section class="panel settings-panel" id="settings"><div class="panel-head"><div><span class="section-label">DEVELOPER SETTINGS</span><h3>Connect your model</h3></div><span class="text-xs text-slate-500">Prototype mode</span></div><div class="settings-grid"><label>Gemini API key<input id="apiKeyInput" class="input" type="password" placeholder="Stored only in this browser"></label><button id="saveKeyBtn" class="btn btn-outline self-end">Save locally</button><label class="procode-label">ProCode scratchpad<textarea id="procodeEditor" class="input" rows="2" placeholder="Draft code alongside your tutor…"></textarea></label><button id="saveProcodeBtn" class="btn btn-outline self-end">Save draft</button></div><p class="security-note">For production, provider credentials belong behind a server-side AI gateway. This browser key field is a temporary development fallback.</p></section>
     </section>
-
-    <!-- Core Features -->
-    <section id="features" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-            <h2 class="text-3xl font-bold mb-4">Core Features</h2>
-            <p class="text-slate-400">Engineered for deep learning and technical mastery.</p>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-all group">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Immersive Learning</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Persistent sessions with projects and memory controls. Measure your learning progress with AI-driven analytics.
-                </p>
-            </div>
-            <!-- Feature 2 -->
-            <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-all group">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Multimodal Intelligence</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Native support for vision, voice, and documents. Analyze code from screenshots or PDFs effortlessly.
-                </p>
-            </div>
-            <!-- Feature 3 -->
-            <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-all group">
-                <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Real-time Workspace</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    A "Canvas" system for code execution, live previews, and file management directly within the tutor.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Implementation Roadmap -->
-    <section id="roadmap" class="py-20 bg-slate-900/30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center">Implementation Roadmap</h2>
-            <div class="space-y-8">
-                <!-- Phase 0 -->
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-12 h-12 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center font-bold">
-                        ✓
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold">Phase 0: Digital Foundation</h4>
-                        <p class="text-slate-400 text-sm">Implementation of the SEO-optimized landing page and product specification. (Completed)</p>
-                    </div>
-                </div>
-                <!-- Phase 1 -->
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-12 h-12 bg-primary/20 text-primary rounded-full flex items-center justify-center font-bold">
-                        1
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold">Phase 1: Core Workspace</h4>
-                        <p class="text-slate-400 text-sm">Chat streaming, file uploads, code execution engine, and canvas integration.</p>
-                    </div>
-                </div>
-                <!-- Phase 2 -->
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-12 h-12 bg-slate-800 text-slate-400 rounded-full flex items-center justify-center font-bold">
-                        2
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold">Phase 2: Learning Engine</h4>
-                        <p class="text-slate-400 text-sm">Tutoring modes, quiz configuration, and personalized progress tracking.</p>
-                    </div>
-                </div>
-                <!-- Phase 3 -->
-                <div class="flex items-start space-x-6">
-                    <div class="flex-shrink-0 w-12 h-12 bg-slate-800 text-slate-400 rounded-full flex items-center justify-center font-bold">
-                        3
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold">Phase 3: Growth & SEO</h4>
-                        <p class="text-slate-400 text-sm">Server-rendered content hub, technical SEO verification, and performance monitoring.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div class="flex items-center space-x-2">
-                <div class="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                    <span class="text-white text-xs font-bold">O</span>
-                </div>
-                <span class="font-bold">OMNI AI Tutor</span>
-            </div>
-            <div class="text-slate-500 text-sm">
-                &copy; 2026 Akanni Shonibare. All rights reserved.
-            </div>
-            <div class="flex space-x-6 text-sm text-slate-400">
-                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
+  </main>
+  <footer class="footer"><span>OMNI AI TUTOR <b>v3</b></span><span>Ask · Capture · Practice · Reflect</span><a href="OMNI_AI_TUTOR_V3_BLUEPRINT.md">Read the verified blueprint →</a></footer>
+  <script src="app.js"></script>
+  <script>const observer=new MutationObserver(()=>{const m=document.getElementById('packetMetric');if(m)m.textContent=document.querySelectorAll('#packetList .packet-card').length});observer.observe(document.body,{subtree:true,childList:true});</script>
 </body>
 </html>
