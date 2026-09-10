@@ -7,7 +7,7 @@
   <meta name="author" content="Akanni Shonibare"><meta name="theme-color" content="#10151f">
   <link rel="canonical" href="https://omni-ai-tutor-v3.netlify.app/">
   <meta property="og:type" content="website"><meta property="og:title" content="Omni AI Tutor v3 — Learning workspace"><meta property="og:description" content="Ask, build, practice, and remember in one AI learning workspace.">
-  <script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={darkMode:'class'}</script><link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={darkMode:'class'}</script><link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
@@ -25,7 +25,7 @@
       <nav class="app-nav"><button class="nav-item" data-view="code"><span>⌘</span> Code Lab <span class="soon">soon</span></button><button class="nav-item" data-view="map"><span>⌁</span> Mind Map <span class="soon">soon</span></button></nav>
       <div class="nav-label">SYSTEM</div>
       <nav class="app-nav"><button class="nav-item" data-view="progress"><span>↗</span> Progress</button><button class="nav-item" data-view="settings"><span>⚙</span> Settings</button></nav>
-      <div class="sidebar-bottom"><div class="model-status"><i></i><span><strong>Local tutor mode</strong><small>Connect Gemini in Settings</small></span></div><a class="help-link" href="OMNI_AI_TUTOR_V3_BLUEPRINT.md">Read the V3 blueprint →</a></div>
+      <div class="sidebar-bottom"><div class="model-status"><i></i><span><strong>Local tutor mode</strong><small>Connect Gemini in Settings</small></span></div><a class="help-link" href="/OMNI_AI_TUTOR_V3_BLUEPRINT.md">Read the V3 blueprint →</a></div>
     </aside>
     <main class="app-main">
       <header class="app-header"><div class="mobile-brand"><span class="brand-mark">O</span><strong>OMNI <em>v3</em></strong></div><div class="breadcrumbs"><span>My learning studio</span><b>/</b><strong id="viewTitle">Assistant</strong></div><div class="header-actions"><a href="/blog/" class="header-link">Blog</a><a href="/changelog/" class="header-link">Changelog</a><span class="header-date">Thursday, September 10</span><a href="https://github.com/shonibareakanni009-ctrl/omni-tutor-ai-v3" class="header-icon" aria-label="GitHub">↗</a><button class="avatar">AS</button></div></header>
@@ -40,5 +40,5 @@
       </div>
     </main>
   </div>
-  <script src="app.js"></script><script>function usePrompt(text){document.querySelector('[data-view="assistant"]').click();document.getElementById('promptInput').value=text;document.getElementById('promptInput').focus()}function syncView(view){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));document.querySelectorAll('.nav-item,[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const title=document.getElementById('viewTitle');if(title)title.textContent=view.charAt(0).toUpperCase()+view.slice(1)}document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>syncView(button.dataset.view)));document.getElementById('canvasAddButton')?.addEventListener('click',()=>document.getElementById('newPacketBtn').click());document.getElementById('practiceGenerateButton')?.addEventListener('click',()=>document.getElementById('generateQuizBtn').click());</script>
+  <script src="/app.js"></script><script>function usePrompt(text){document.querySelector('[data-view="assistant"]').click();document.getElementById('promptInput').value=text;document.getElementById('promptInput').focus()}function syncView(view){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));document.querySelectorAll('.nav-item,[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));const title=document.getElementById('viewTitle');if(title)title.textContent=view.charAt(0).toUpperCase()+view.slice(1)}document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>syncView(button.dataset.view)));document.getElementById('canvasAddButton')?.addEventListener('click',()=>document.getElementById('newPacketBtn').click());document.getElementById('practiceGenerateButton')?.addEventListener('click',()=>document.getElementById('generateQuizBtn').click());</script>
 </body></html>
