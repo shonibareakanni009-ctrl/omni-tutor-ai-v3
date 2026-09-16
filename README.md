@@ -12,6 +12,8 @@ The project is evolving from the original **OmniTutor v2.9** foundation. V2 esta
 
 The root homepage at `/` is my public landing page. It explains the product and links to the public learning content. The browser workspace is at `/app/`; it is intentionally marked noindex because it is currently a local-first prototype rather than a server-backed private application.
 
+The local workspace is split into focused pages so mobile users are not forced to work through one crowded screen: `/app/assistant.html`, `/app/canvas.html`, `/app/practice.html`, `/app/code.html`, `/app/map.html`, `/app/progress.html`, and `/app/settings.html`. Each page is independently reachable and uses the same mobile-first navigation shell.
+
 The public feature pages include `/features/ai-tutor/`, `/features/ai-quizzes/`, `/features/coding-tutor/`, `/features/language-learning/`, and `/features/personalized-learning/`. The public Learning pages include mathematics, programming, science, and languages.
 
 I also publish `/resources/`, `/blog/`, `/changelog/`, `/about/`, `/pricing/`, `/contact/`, `/privacy/`, `/terms/`, and `/security/`.
